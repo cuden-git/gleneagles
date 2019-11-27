@@ -1,0 +1,84 @@
+@import "common/variables";
+
+/** Import everything from autoload */
+@import "./autoload/**/*";
+
+/**
+ * Import custom dependancies
+ *
+ * When using third party packages it's preferred to have yarn
+ * manage them. After installing with yarn you can import CSS/SASS
+ * as below
+ *
+ * Prefix your imports with `~` to grab from node_modules/
+ * @see https://github.com/webpack-contrib/sass-loader#imports
+ */
+// @import "~some-node-module";
+
+/**
+ * Common
+ *
+ * Global rules used throughout the theme, you tend to target elements here
+ * for example a, h1, form, body.
+ */
+@import "common/global";
+@import "common/typography";
+@import "common/wp-classes";
+@import "common/animations";
+
+/**
+ * Layouts
+ *
+ * Layouts represent grid systems and other global rulesets.
+ * For example you would configure a 3 column layout here,
+ * you could also define rules for the <main class="main">
+ */
+// @import "layouts/main";
+// @import "layouts/scroll-window";
+// @import "layouts/primary-nav";
+
+/**
+ * Components
+ *
+ * Small re-usable components such as buttons, arrows, cards and indicators
+ */
+@import "./components/**/*";
+
+// @import "components/carousel";
+// @import "components/comments";
+// @import "components/forms";
+// @import "components/primary-nav";
+// @import "components/hamburger-button";
+// @import "components/media";
+// @import "components/footer";
+
+/**
+ * Content Blocks
+ *
+ * Similar to modules which is generally a collection of components, renamed to content blocks
+ * to fit in with WordPress terminology. For example you could have a jumbotron containing a carousel
+ * component, a button component and a card component.
+ */
+@import "./content-blocks/**/*";
+
+/**
+ * Partials
+ *
+ * Partials represent WordPress partials, such as page headers, footers, content wrappers.
+ */
+@import "partials/**/*";
+
+/**
+ * Page Templates
+ *
+ * Full page template overrides
+ */
+// @import "page-templates/custom-subfolder";
+
+/**
+ * Dev
+ *
+ * Temporary store for dirty or WIP CSS. This should be used when work needs to be shared but
+ * isn't inline with coding standards or isn't fully complete.
+ */
+// @import "dev/wip";

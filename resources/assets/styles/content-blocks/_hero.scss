@@ -1,0 +1,760 @@
+.cb-hero {
+  $cb: &;
+
+  &--type-one {
+    #{$cb}__container {
+      display: inline-block;
+      width: 100%;
+      height: rem-calc(500px);
+      min-height: calc(100vh - 240px);
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+
+      // IE10+ specific styles
+      @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+        height: calc(100vh - 96px);
+      }
+
+      @media screen and (orientation: portrait) {
+        max-height: 700px !important;
+        height: auto;
+        padding-bottom: 120px !important;
+        padding-top: 120px !important;
+        min-height: 500px !important;
+      }
+
+      // @media screen and (orientation: landscape) {
+      //   min-height: calc(100vh - 96px) !important;
+      // }
+
+      img {
+        &.image-cover {
+          z-index: -1;
+        }
+      }
+
+      video {
+        &.video-cover {
+          z-index: -1;
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        padding: 0 48px;
+        min-height: calc(100vh - 96px);
+      }
+    }
+
+    #{$cb}__animation {
+      content: "";
+      width: 3px;
+      height: 120px;
+      background: transparent;
+      position: absolute;
+      bottom: 0;
+      left: 24px;
+      right: auto;
+      margin: auto;
+      opacity: 0;
+      animation: cb-hero__animation 2s 2 forwards;
+      animation-delay: 2s;
+
+      @keyframes cb-hero__animation {
+        0% {
+          opacity: 0;
+        }
+
+        25% {
+          opacity: 0;
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        75% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        left: 0;
+        right: 0;
+        // height: 120px;
+      }
+
+      #{$cb}__animation-block {
+        width: 3px;
+        height: 28px;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateY(0);
+        animation: cb-hero__animation-block 2s 1 none ease-out;
+        animation-delay: 2s;
+
+        @keyframes cb-hero__animation-block {
+          0% {
+            transform: translateY(0);
+          }
+
+          25% {
+            transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(0);
+          }
+
+          68% {
+            transform: translateY(0);
+          }
+
+          75% {
+            transform: translateY(0);
+          }
+
+          100% {
+            transform: translateY(140px);
+          }
+        }
+      }
+
+      #{$cb}__animation-line {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        left: 1px;
+        top: 0;
+        transform: translateY(0);
+        animation: cb-hero__animation-line 2s 1 none ease-out;
+        animation-delay: 2s;
+
+        @keyframes cb-hero__animation-line {
+          0% {
+            transform: translateY(0);
+            height: 0;
+          }
+
+          25% {
+            transform: translateY(0);
+            height: 0;
+          }
+
+          50% {
+            transform: translateY(0);
+            height: 0;
+          }
+
+          68% {
+            transform: translateY(0);
+            height: 100%;
+          }
+
+          75% {
+            transform: translateY(0);
+            height: 100%;
+          }
+
+          100% {
+            transform: translateY(140px);
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    #{$cb}__text-block {
+      width: 100%;
+      text-align: center;
+      max-width: 650px;
+
+      @include media-breakpoint-up(xl) {
+        max-width: 920px;
+      }
+    }
+
+    #{$cb}__pre-heading {
+      @include label-text;
+
+      text-align: left;
+      color: #fff;
+
+      @include media-breakpoint-up(md) {
+        text-align: center;
+      }
+    }
+
+    #{$cb}__heading {
+      text-align: left;
+      color: $color-green-100;
+
+      @include media-breakpoint-up(md) {
+        text-align: center;
+      }
+    }
+
+    &#{$cb}--text-colour-two {
+      #{$cb}__pre-heading {
+        color: $color-green-400 !important;
+      }
+
+      #{$cb}__heading {
+        color: $color-green-400 !important;
+      }
+    }
+  }
+
+  &--type-two {
+    #{$cb}__container {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      padding: 0;
+      position: relative;
+      z-index: 2;
+
+      @include media-breakpoint-up(md) {
+        height: rem-calc(520px);
+      }
+    }
+
+    #{$cb}__text-block {
+      width: 100%;
+      // background: $color-green-100;
+      padding: 0 24px;
+
+      @include media-breakpoint-up(md) {
+        padding: 0 48px;
+        width: 50%;
+      }
+    }
+
+    #{$cb}__image-block {
+      position: relative;
+      width: 100%;
+      height: 300px;
+
+      @include media-breakpoint-up(md) {
+        width: 50%;
+        height: 100%;
+      }
+    }
+
+    #{$cb}__pre-heading {
+      @include label-text;
+
+      text-align: left;
+      color: $color-grey-300;
+
+      @include media-breakpoint-up(md) {
+        text-align: center;
+      }
+    }
+
+    #{$cb}__heading {
+      text-align: left;
+      max-width: 380px;
+      color: $color-green-400;
+
+      h1 {
+        @include media-breakpoint-up(md) {
+          @include h2;
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        text-align: center;
+        max-width: 450px;
+      }
+    }
+
+    &#{$cb}--text-colour-two {
+      #{$cb}__pre-heading {
+        color: $color-green-100 !important;
+      }
+
+      #{$cb}__heading {
+        color: $color-green-100 !important;
+      }
+    }
+  }
+
+  &--type-three {
+    #{$cb}__container {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      min-height: 450px;
+      padding: 0;
+      position: relative;
+
+      @include media-breakpoint-up(md) {
+        min-height: 800px;
+        height: calc(100vh - 96px);
+      }
+    }
+
+    #{$cb}__text-block {
+      width: 100%;
+      // background: $color-green-100;
+      padding: 0 24px;
+      max-height: 180px;
+
+      @include media-breakpoint-up(md) {
+        width: 100%;
+        padding: 0 48px;
+      }
+    }
+
+    #{$cb}__image-block {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      min-height: 300px;
+
+      @include media-breakpoint-up(md) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    #{$cb}__heading {
+      text-align: left;
+      max-width: rem-calc(440px);
+      color: $color-green-400;
+
+      &.cb-hero__heading--logo {
+        max-width: 100%;
+
+        #logo {
+          margin: rem-calc(18px) auto;
+          text-indent: -99999px;
+          overflow: hidden;
+          position: relative;
+
+          h1 {
+            position: absolute;
+          }
+
+          img {
+            &.logo-image {
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              margin: auto;
+              height: 100%;
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      h1 {
+        max-width: 450px;
+
+        @include h2;
+      }
+
+      @include media-breakpoint-up(md) {
+        text-align: center;
+      }
+    }
+
+    &#{$cb}--text-colour-two {
+      #{$cb}__pre-heading {
+        color: $color-green-300 !important;
+      }
+
+      #{$cb}__heading {
+        color: $color-green-100 !important;
+      }
+    }
+  }
+
+  &--type-four {
+    #{$cb}__container {
+      justify-content: space-between;
+      width: 100%;
+      height: rem-calc(500px);
+      min-height: calc(100vh - 240px);
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+
+      // IE10+ specific styles
+      @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+        height: calc(100vh - 96px);
+      }
+
+      img {
+        &.image-cover {
+          z-index: -1;
+        }
+      }
+
+      video {
+        &.video-cover {
+          z-index: -1;
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        padding: 0 48px;
+        min-height: calc(100vh - 96px);
+      }
+
+      #{$cb}__text-block {
+        #{$cb}__pre-heading {
+          text-align: center;
+        }
+
+        #{$cb}__heading {
+          text-align: center;
+        }
+      }
+    }
+
+    #{$cb}__booking {
+      color: #fff;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: rem-calc(20px);
+      width: 100%;
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: rem-calc(50px);
+        width: auto;
+      }
+
+      .c-button {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          border: 5px solid #e6e9e6;
+          background-color: transparent;
+          border-image: url(/gleneagles/wp-content/themes/gleneagles/resources/dist/styles/../images/button-border-green-100.png) 5 stretch;
+          color: #e6e9e6;
+          text-decoration: none;
+          width: auto;
+          margin-left: 15px;
+          display: block;
+        }
+
+        @include media-breakpoint-up(lg) {
+          margin-left: 0;
+        }
+
+        #{$cb}__booking-cta-text-desktop {
+          display: none;
+
+          @include media-breakpoint-up(lg) {
+            display: inline-block;
+          }
+        }
+
+        #{$cb}__booking-cta-text-mobile {
+          display: inline-block;
+
+          @include media-breakpoint-up(lg) {
+            display: none;
+          }
+        }
+      }
+
+      #{$cb}__booking-option {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+          display: block;
+        }
+
+        &--arriving,
+        &--departing {
+          font-family: $font-pt-reg;
+          font-size: rem-calc(16px);
+          line-height: rem-calc(16px);
+          width: rem-calc(120px);
+          height: rem-calc(40px);
+          margin-right: rem-calc(20px);
+          color: white;
+          background-image: url("data:image/svg+xml,%0A%3Csvg width='15px' height='18px' viewBox='0 0 15 18' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Homepage' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='GE-S03-HomePage-Desktop' transform='translate(-393.000000, -622.000000)' fill-rule='nonzero' stroke='%23E6E9E6'%3E%3Cg id='Book-your-stay-bar' transform='translate(288.000000, 592.000000)'%3E%3Cg id='Booking'%3E%3Cg id='Arriving'%3E%3Cg id='Check-in'%3E%3Cg id='Group-3' transform='translate(105.000000, 31.000000)'%3E%3Cline x1='4.5' y1='0.357142857' x2='4.5' y2='4.42557199' id='Line-5' stroke-linecap='square'%3E%3C/line%3E%3Cline x1='14.5' y1='7.19580078' x2='0.5' y2='7.19580078' id='Line-5-Copy-2' stroke-linecap='square'%3E%3C/line%3E%3Cline x1='10.5' y1='0.357142857' x2='10.5' y2='4.42557199' id='Line-5-Copy' stroke-linecap='square'%3E%3C/line%3E%3Crect id='Rectangle' x='0.5' y='2.5' width='14' height='14'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid white;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-repeat: no-repeat;
+          background-position: right 0 top 50%, 0 0;
+
+          @include media-breakpoint-up(lg) {
+            width: rem-calc(130px);
+            margin-right: rem-calc(35px);
+          }
+        }
+
+        label {
+          font-family: $font-ws-reg;
+          font-size: rem-calc(13px);
+          line-height: rem-calc(24px);
+          color: white;
+          letter-spacing: 0;
+          text-align: left;
+          margin-bottom: rem-calc(-8px);
+          display: block;
+
+          @include media-breakpoint-up(md) {
+            font-size: rem-calc(14px);
+            line-height: rem-calc(24px);
+          }
+        }
+
+        select {
+          font-family: $font-pt-reg;
+          font-size: rem-calc(20px);
+          line-height: rem-calc(16px);
+          height: rem-calc(40px);
+          color: white;
+          border: none;
+          border-bottom: 1px solid white;
+          background-color: transparent;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-repeat: no-repeat;
+          background-position: right 0 top 50%, 0 0;
+          text-indent: rem-calc(35px);
+          margin-right: rem-calc(20px);
+          border-radius: 0;
+
+          @include media-breakpoint-up(md) {
+            margin-right: rem-calc(27px);
+          }
+
+          @include media-breakpoint-up(lg) {
+            margin-right: rem-calc(35px);
+          }
+
+          // Fixes for dropdowns in FireFox
+          @-moz-document url-prefix("") {
+            text-indent: 0;
+          }
+
+          // Fixes for dropdowns in Safari
+          @media not all and (min-resolution: 0.001dpcm) {
+            text-align-last: center;
+          }
+
+          option {
+            direction: rtl;
+          }
+        }
+
+        [type="date"]::-webkit-inner-spin-button {
+          display: none;
+        }
+
+        [type="date"]::-webkit-calendar-picker-indicator {
+          opacity: 0;
+        }
+
+        &--cal {
+          width: rem-calc(100px);
+          background-image: url("data:image/svg+xml,%0A%3Csvg width='15px' height='18px' viewBox='0 0 15 18' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Homepage' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='GE-S03-HomePage-Desktop' transform='translate(-393.000000, -622.000000)' fill-rule='nonzero' stroke='%23E6E9E6'%3E%3Cg id='Book-your-stay-bar' transform='translate(288.000000, 592.000000)'%3E%3Cg id='Booking'%3E%3Cg id='Arriving'%3E%3Cg id='Check-in'%3E%3Cg id='Group-3' transform='translate(105.000000, 31.000000)'%3E%3Cline x1='4.5' y1='0.357142857' x2='4.5' y2='4.42557199' id='Line-5' stroke-linecap='square'%3E%3C/line%3E%3Cline x1='14.5' y1='7.19580078' x2='0.5' y2='7.19580078' id='Line-5-Copy-2' stroke-linecap='square'%3E%3C/line%3E%3Cline x1='10.5' y1='0.357142857' x2='10.5' y2='4.42557199' id='Line-5-Copy' stroke-linecap='square'%3E%3C/line%3E%3Crect id='Rectangle' x='0.5' y='2.5' width='14' height='14'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+          @include media-breakpoint-up(lg) {
+            width: rem-calc(120px);
+          }
+        }
+
+        &--drop-down {
+          width: rem-calc(50px);
+          background-image: url("data:image/svg+xml,%0A%3Csvg width='12px' height='7px' viewBox='0 0 12 7' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Homepage' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='GE-S03-HomePage-Desktop' transform='translate(-668.000000, -626.000000)' fill-rule='nonzero' stroke='%23E6E9E6' stroke-width='1.5'%3E%3Cg id='Book-your-stay-bar' transform='translate(288.000000, 592.000000)'%3E%3Cg id='Booking'%3E%3Cg id='Adults' transform='translate(320.000000, 0.000000)'%3E%3Cpolyline id='Path-Copy-5' points='61 35 66 40 71 35'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+          @include media-breakpoint-up(md) {
+            width: rem-calc(60px);
+          }
+
+          @include media-breakpoint-up(lg) {
+            width: rem-calc(65px);
+          }
+        }
+      }
+    }
+
+    #{$cb}__animation {
+      content: "";
+      width: 3px;
+      height: 120px;
+      background: transparent;
+      position: absolute;
+      bottom: 0;
+      left: 24px;
+      right: auto;
+      margin: auto;
+      opacity: 0;
+      animation: cb-hero__animation 2s 2 forwards;
+      animation-delay: 2s;
+
+      @keyframes cb-hero__animation {
+        0% {
+          opacity: 0;
+        }
+
+        25% {
+          opacity: 0;
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        75% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        left: 0;
+        right: 0;
+        // height: 120px;
+      }
+
+      #{$cb}__animation-block {
+        width: 3px;
+        height: 28px;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translateY(0);
+        animation: cb-hero__animation-block 2s 1 none ease-out;
+        animation-delay: 2s;
+
+        @keyframes cb-hero__animation-block {
+          0% {
+            transform: translateY(0);
+          }
+
+          25% {
+            transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(0);
+          }
+
+          68% {
+            transform: translateY(0);
+          }
+
+          75% {
+            transform: translateY(0);
+          }
+
+          100% {
+            transform: translateY(140px);
+          }
+        }
+      }
+
+      #{$cb}__animation-line {
+        width: 1px;
+        height: 100%;
+        background: #fff;
+        position: absolute;
+        left: 1px;
+        top: 0;
+        transform: translateY(0);
+        animation: cb-hero__animation-line 2s 1 none ease-out;
+        animation-delay: 2s;
+
+        @keyframes cb-hero__animation-line {
+          0% {
+            transform: translateY(0);
+            height: 0;
+          }
+
+          25% {
+            transform: translateY(0);
+            height: 0;
+          }
+
+          50% {
+            transform: translateY(0);
+            height: 0;
+          }
+
+          68% {
+            transform: translateY(0);
+            height: 100%;
+          }
+
+          75% {
+            transform: translateY(0);
+            height: 100%;
+          }
+
+          100% {
+            transform: translateY(140px);
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    #{$cb}__text-block {
+      width: 100%;
+      text-align: center;
+      max-width: 650px;
+
+      @include media-breakpoint-up(xl) {
+        max-width: 920px;
+      }
+    }
+
+    #{$cb}__pre-heading {
+      @include label-text;
+
+      text-align: left;
+      color: #fff;
+
+      @include media-breakpoint-up(md) {
+        text-align: center;
+      }
+    }
+
+    #{$cb}__heading {
+      text-align: left;
+      color: $color-green-100;
+
+      @include media-breakpoint-up(md) {
+        text-align: center;
+      }
+    }
+
+    &#{$cb}--text-colour-two {
+      #{$cb}__pre-heading {
+        color: $color-green-400 !important;
+      }
+
+      #{$cb}__heading {
+        color: $color-green-400 !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+/**
+ * Fonts
+ */
+$font-family-serif: "Old Standard TT", "Times New Roman", Times, serif;
+$font-family-sans-serif: "Barlow Condensed", Helvetica, Arial, sans-serif;
+$font-ws-reg: "WorkSans-Regular", Helvetica, Arial, sans-serif;
+$font-ws-med: "WorkSans-Medium", Helvetica, Arial, sans-serif;
+$font-ws-semibold: "WorkSans-SemiBold", Helvetica, Arial, sans-serif;
+$font-ws-bold: "WorkSans-Bold", Helvetica, Arial, sans-serif;
+$font-pt-reg: "PortraitText-Regular", "Times New Roman", Times, serif;
+$font-pt-reg-i: "PortraitText-RegularItalic", "Times New Roman", Times, serif;
+
+/**
+ * Colours
+ */
+$color-green-100: #e6e9e6;
+$color-green-200: #d3d9d3;
+$color-green-300: #a2d19c;
+$color-green-400: #104520;
+$color-green-500: #192620;
+$color-green-600: #25362e;
+$color-green-700: #223a2c;
+$color-grey-100: #f7f8f7;
+$color-grey-200: #626865;
+$color-grey-300: #3b423f;
+$color-grey-400: #c4cbc4;

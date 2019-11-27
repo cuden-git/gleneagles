@@ -1,0 +1,144 @@
+.cb-page-break {
+  $cb: &;
+
+  &--type-one {
+    background: $color-green-100;
+
+    #{$cb}__container {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      position: relative;
+
+      @include media-breakpoint-up(md) {
+        display: inline-block;
+        width: 100%;
+        height: 700px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        display: inline-block;
+        width: 100%;
+        height: 900px;
+      }
+    }
+
+    #{$cb}__text-block {
+      width: 100%;
+      padding: 24px 48px 40px;
+
+      h4 {
+        font-family: $font-pt-reg-i;
+        color: $color-grey-300;
+        max-width: rem-calc(460px);
+      }
+
+      @include media-breakpoint-up(md) {
+        width: 50%;
+        padding: 24px 48px 80px;
+      }
+    }
+
+    #{$cb}__image-block {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      height: 300px;
+
+      @include media-breakpoint-up(md) {
+        width: 50%;
+        height: auto;
+      }
+    }
+
+    #{$cb}__image {
+      position: absolute;
+      left: -100px;
+      margin: auto;
+      bottom: 0;
+      width: 450px;
+      height: 300px;
+
+      img {
+        max-width: 100%;
+      }
+
+      @include media-breakpoint-up(md) {
+        right: 0;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        width: 900px;
+        height: 600px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        right: 0;
+        left: auto;
+        bottom: 0;
+        top: 0;
+        width: 1200px;
+        height: 900px;
+      }
+    }
+
+    &#{$cb}--alternative-layout {
+      #{$cb}__image {
+        position: absolute;
+        right: -100px;
+        left: auto;
+        margin: auto;
+        bottom: 0;
+        width: 450px;
+        height: 300px;
+
+        img {
+          max-width: 100%;
+        }
+
+        @include media-breakpoint-up(md) {
+          right: 0;
+          left: auto;
+          bottom: 0;
+          top: 0;
+          width: 900px;
+          height: 600px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+          right: 0;
+          left: auto;
+          bottom: 0;
+          top: 0;
+          width: 1200px;
+          height: 900px;
+        }
+      }
+    }
+
+    &#{$cb}--colour-two {
+      background-color: $color-grey-100;
+    }
+  }
+
+  &--type-two {
+    #{$cb}__container {
+      display: block;
+      width: 100%;
+      height: 500px;
+      position: relative;
+
+      @include media-breakpoint-up(md) {
+        display: inline-block;
+        width: 100%;
+        height: 700px;
+      }
+
+      &#{$cb}__container--matterport {
+        @media (max-height: 500px) {
+          max-height: calc(100vh - 80px);
+        }
+      }
+    }
+  }
+}

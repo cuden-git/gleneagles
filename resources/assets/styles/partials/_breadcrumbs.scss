@@ -1,0 +1,15 @@
+.breadcrumbs {
+  background: $color-green-100;
+  height: 48px;
+  padding: 0 24px;
+  border-bottom: 1px solid $color-green-200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    @include label-text;
+
+    margin: 0;
+  }
+}

@@ -1,0 +1,117 @@
+.cb-floorplan {
+  $cb: &;
+
+  background-color: $color-green-100;
+  text-align: center;
+
+  &--type-one {
+    #{$cb}__container {
+      opacity: 1;
+      max-width: 1264px;
+      margin: 0 auto;
+
+      @include media-breakpoint-up(md) {
+        opacity: 1;
+      }
+
+      #{$cb}__pinchzoomer {
+        width: 100%;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+
+        .controlHolder {
+          border-radius: rem-calc(5px);
+          background: rgba(0, 0, 0, 0.4);
+          position: absolute;
+          right: rem-calc(10px);
+          top: rem-calc(10px);
+          padding: rem-calc(5px);
+          z-index: 100;
+
+          .fullscreenToggle,
+          .zoomIn,
+          .zoomOut {
+            background: url(../images/pz_sheet.png) no-repeat;
+            width: rem-calc(30px);
+            height: rem-calc(30px);
+            overflow: hidden;
+            position: relative;
+            display: block;
+            z-index: 100;
+            margin: rem-calc(5px) 0;
+          }
+
+          .zoomIn.on,
+          .zoomOut.on {
+            cursor: pointer;
+          }
+
+          .zoomIn {
+            background-position: 0 0;
+          }
+
+          .zoomOut {
+            background-position: -30px 0;
+          }
+
+          .zoomIn.off,
+          .zoomOut.off {
+            opacity: 0.5;
+            cursor: auto;
+          }
+
+          .fullscreenToggle {
+            background-position: -60px 0;
+            cursor: pointer;
+            display: none;
+          }
+        }
+      }
+
+      > p {
+        @include label-text;
+
+        position: relative;
+        text-align: center;
+        display: inline-block;
+        top: rem-calc(60px);
+        color: $color-grey-200;
+        text-transform: uppercase;
+        padding-left: 1.75rem;
+
+        span {
+          &:nth-of-type(2) {
+            display: none;
+          }
+        }
+
+        &.touch-device {
+          span {
+            &:nth-of-type(1) {
+              display: none;
+            }
+
+            &:nth-of-type(2) {
+              display: inline;
+            }
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 1rem;
+          height: 1rem;
+          background-image: url("../images/expand.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+      }
+    }
+  }
+}

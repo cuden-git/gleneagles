@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="321px" height="256px" viewBox="0 0 321 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Table</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Lodges-For-Sale" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="GE-LodgesForSale-Mobile" transform="translate(-41.000000, -4030.000000)" stroke="#D3D9D3">
+            <g id="Pricing-Copy" transform="translate(0.000000, 3710.000000)">
+                <g id="Table" transform="translate(41.000000, 320.000000)">
+                    <g id="Lines">
+                        <g id="Group-4" transform="translate(1.000000, 54.500000)" stroke-linecap="square">
+                            <path d="M0,1 L319,1" id="Line-Copy-2"></path>
+                            <path d="M0,41 L319,41" id="Line-Copy-3"></path>
+                            <path d="M0,81 L319,81" id="Line-Copy-6"></path>
+                            <path d="M0,122 L319,122" id="Line-Copy-7"></path>
+                            <path d="M0,161 L319,161" id="Line-Copy-8"></path>
+                        </g>
+                        <g id="Group-6" transform="translate(96.304688, 1.500000)" stroke-linecap="square">
+                            <path d="M28.6953125,127 L282.695312,127" id="Line-Copy-4" transform="translate(155.695312, 127.000000) rotate(90.000000) translate(-155.695312, -127.000000) "></path>
+                            <path d="M-126.304688,127 L127.695312,127" id="Line-Copy-5" transform="translate(0.695312, 127.000000) rotate(90.000000) translate(-0.695312, -127.000000) "></path>
+                        </g>
+                        <path d="M33,-20.1402889 L33,276.135659 L33.233769,276.358305 L45.2103064,287.765026 L45.4539728,288 L275.546032,288 L275.791934,287.762879 L288,276.135659 L288,-20.1402889 L275.547829,-32 L45.4521709,-32 L33,-20.1402889 Z" id="Stroke-1" transform="translate(160.500000, 128.000000) rotate(-270.000000) translate(-160.500000, -128.000000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

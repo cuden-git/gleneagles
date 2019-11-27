@@ -1,0 +1,130 @@
+.cb-table {
+  $cb: &;
+
+  &--type-one {
+    #{$cb}__container {
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      position: relative;
+      margin: auto;
+      padding: 24px 24px 8px;
+      text-align: center;
+
+      &#{$cb}__container--columns-1 {
+        padding-top: 8px;
+      }
+
+      @include media-breakpoint-up(md) {
+        padding: 24px 48px 8px;
+        max-width: 1264px;
+        text-align: center;
+      }
+    }
+
+    #{$cb}__text-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      #{$cb}__heading h5 {
+        font-size: 1.5rem;
+        color: $color-grey-300;
+        margin: 16px 0 32px;
+      }
+    }
+
+    #{$cb}__container--columns-1 #{$cb}__heading h5 {
+      margin-bottom: 24px;
+    }
+
+    #{$cb}__table-block {
+      display: block;
+      align-items: center;
+      // justify-content: space-around;
+
+      @include media-breakpoint-up(sm) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+    }
+
+    #{$cb}__table-block--columns-1,
+    #{$cb}__table-block--columns-2 {
+      justify-content: center;
+    }
+
+    #{$cb}__table-block--columns-3,
+    #{$cb}__table-block--columns-4,
+    #{$cb}__table-block--columns-5 {
+      justify-content: space-around;
+    }
+
+    #{$cb}__table-block--columns-1 > #{$cb}__table-column {
+      padding-bottom: 16px;
+    }
+
+    #{$cb}__table-block--columns-3 > #{$cb}__table-column {
+      width: 100%;
+
+      @include media-breakpoint-up(sm) {
+        width: 33.3%;
+      }
+    }
+
+    #{$cb}__table-block--columns-4 > #{$cb}__table-column {
+      width: 100%;
+
+      @include media-breakpoint-up(sm) {
+        width: 25%;
+      }
+    }
+
+    #{$cb}__table-block--columns-5 > #{$cb}__table-column {
+      width: 100%;
+
+      @include media-breakpoint-up(sm) {
+        width: 20%;
+      }
+    }
+
+    #{$cb}__table-column {
+      padding: 0 30px 32px;
+      text-align: center;
+      align-self: flex-start;
+
+      .title {
+        @include label-text;
+
+        color: $color-grey-200;
+        margin: 0;
+
+        .pre_heading {
+          color: $color-grey-300;
+        }
+      }
+
+      .text {
+        color: $color-grey-200;
+        font-family: $font-ws-reg;
+        font-size: rem-calc(14px);
+      }
+
+      .title > .pre_heading {
+        display: block;
+        padding: 0 0 8px;
+      }
+
+      .title > .heading {
+        display: block;
+        padding: 0 0 4px;
+      }
+
+      .text > * {
+        display: block;
+      }
+    }
+  }
+}

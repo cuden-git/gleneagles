@@ -1,0 +1,462 @@
+.cb-availability {
+  $cb: &;
+
+  &--type-one {
+    #{$cb}__container {
+      display: inline-block;
+      width: 100%;
+      padding: 0 rem-calc(23px);
+    }
+
+    h2 {
+      @include h2;
+
+      margin: 0 auto;
+      color: $color-green-400;
+
+      @include media-breakpoint-up(lg) {
+        margin: rem-calc(10px) auto;
+      }
+    }
+
+    .cb-availability__block {
+      .cb-availability__heading {
+        @include paragraph-text;
+
+        text-align: center;
+        margin: 0;
+      }
+
+      .cb-availability__details {
+        text-align: center;
+        margin: 0 auto;
+        max-width: rem-calc(315px);
+
+        @include media-breakpoint-up(lg) {
+          max-width: rem-calc(475px);
+        }
+      }
+
+      .cb-availability__search {
+        padding: rem-calc(25px) 0 rem-calc(40px) 0;
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+          display: block;
+        }
+
+        select::-ms-expand {
+          border-style: none;
+          background: $color-grey-100;
+        }
+
+        label {
+          display: block;
+          font-family: $font-pt-reg;
+          font-size: rem-calc(18px);
+          color: $color-grey-300;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: rem-calc(24px);
+          margin-bottom: rem-calc(8px);
+        }
+
+        .cb-availability--dropdown {
+          font-family: $font-ws-reg;
+          font-size: rem-calc(14px);
+          color: $color-grey-200;
+          letter-spacing: rem-calc(1.4px);
+          text-align: center;
+          line-height: rem-calc(16px);
+          border: 1px solid $color-green-200;
+          background-color: transparent;
+          width: rem-calc(170px);
+          height: rem-calc(50px);
+          text-transform: uppercase;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-image: url("data:image/svg+xml,%0A%3Csvg width='8px' height='4px' viewBox='0 0 8 4' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Lodges-For-Sale' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='GE-LodgesForSale-Desktop' transform='translate(-661.000000, -3807.000000)' fill='%23626865'%3E%3Cg id='  ability-02' transform='translate(0.000000, 3511.000000)'%3E%3Cg id='Filters' transform='translate(536.000000, 241.000000)'%3E%3Cg id='Long-term-Copy' transform='translate(0.000000, 32.000000)'%3E%3Cpath d='M125,27 L133,27 C130.819743,25.3225911 129.48641,23.9892578 129,23 C128.496257,23.9910482 127.162923,25.3243815 125,27 Z' id='Fill-13' transform='translate(129.000000, 25.000000) scale(1, -1) translate(-129.000000, -25.000000) '%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          background-repeat: no-repeat, repeat;
+          background-position: right rem-calc(18px) top 50%, 0 0;
+          text-indent: rem-calc(35px);
+          padding-right: rem-calc(10px);
+          border-radius: 0;
+
+          // Fixes for dropdowns in FireFox
+          @-moz-document url-prefix("") {
+            text-indent: 0;
+          }
+
+          // Fixes for dropdowns in Safari
+          @media not all and (min-resolution: 0.001dpcm) {
+            text-align-last: center;
+          }
+
+          // Fixes for dropdowns in IE11
+          @media (-ms-high-contrast: none),
+            (-ms-high-contrast: active) {
+            padding-left: rem-calc(30px);
+          }
+        }
+
+        .cb-availability__month,
+        .cb-availability__length {
+          display: inline-block;
+          margin: 0 rem-calc(16px);
+        }
+      }
+
+      .cb-availability__filter {
+        font-family: $font-ws-reg;
+        font-size: rem-calc(14px);
+        color: $color-grey-200;
+        letter-spacing: rem-calc(1.4px);
+        text-align: center;
+        line-height: rem-calc(46px);
+        border: 1px solid #d3d9d3;
+        text-transform: uppercase;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-align-last: center;
+        margin: rem-calc(44px) auto;
+        width: rem-calc(150px);
+        height: rem-calc(47px);
+
+        svg {
+          margin-right: rem-calc(10px);
+        }
+
+        @include media-breakpoint-up(lg) {
+          display: none;
+        }
+      }
+
+      .cb-availability__table {
+        font-family: $font-ws-reg;
+        color: $color-grey-300;
+        letter-spacing: 0;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        position: relative;
+        font-size: rem-calc(14px);
+        border: 5px solid transparent;
+        border-image: url("../images/border-edge-desktop.svg") 7 stretch;
+        -webkit-border-image: url("../images/border-edge-mobile.svg") 5 stretch;
+        height: rem-calc(350px);
+        max-width: rem-calc(334px);
+
+        @-moz-document url-prefix("") {
+          -moz-border-image: url("../images/border-edge-desktop.svg") 15 stretch;
+        }
+
+        @include media-breakpoint-up(lg) {
+          -webkit-border-image: url("../images/border-edge-desktop.svg") 5 stretch;
+          font-size: rem-calc(16px);
+          max-width: rem-calc(862px);
+
+          @-moz-document url-prefix("") {
+            border-image: url("../images/border-edge-desktop.svg") 7 stretch;
+          }
+        }
+
+        @include media-breakpoint-up(xl) {
+          max-width: rem-calc(918px);
+        }
+
+        p {
+          @include paragraph-text;
+
+          color: $color-green-400;
+          font-family: $font-ws-reg;
+          font-size: rem-calc(16px);
+          letter-spacing: 0;
+          text-align: center;
+          line-height: rem-calc(24px);
+          margin: 0 0 rem-calc(32px) auto;
+
+          @include media-breakpoint-up(lg) {
+            margin: 0;
+          }
+        }
+
+        table {
+          padding: 0;
+          margin: 0;
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          border-collapse: collapse;
+          border: 5px solid transparent;
+          width: calc(100% + 10px);
+          height: calc(100% + 10px);
+
+          @-moz-document url-prefix("") {
+            top: -10px;
+            left: -10px;
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+          }
+        }
+
+        tbody {
+          padding: 0;
+          margin: 0;
+        }
+
+        tr,
+        th,
+        td {
+          border: 1px solid $color-green-200;
+          font-weight: 100;
+          border-spacing: 0;
+          padding: rem-calc(4px) rem-calc(10px);
+          height: rem-calc(55px);
+
+          @include media-breakpoint-up(lg) {
+            padding: rem-calc(14px) 0;
+          }
+        }
+
+        tr,
+        td {
+          @include media-breakpoint-up(xs) {
+            padding: rem-calc(5px) 0;
+          }
+
+          @include media-breakpoint-up(lg) {
+            height: rem-calc(56px);
+          }
+        }
+
+        th {
+          min-width: none;
+
+          @include media-breakpoint-up(lg) {
+            min-width: rem-calc(110px);
+          }
+        }
+
+        .cb-availability__column {
+          color: $color-grey-300;
+          font-size: rem-calc(16px);
+          font-family: $font-pt-reg-i;
+
+          @include media-breakpoint-up(lg) {
+            font-size: rem-calc(22px);
+          }
+        }
+      }
+
+      .cb-availability__beds--hide {
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+          display: table-cell;
+        }
+      }
+
+      .c-button--type-tertiary {
+        width: rem-calc(180px);
+        margin-bottom: rem-calc(34px);
+
+        @include media-breakpoint-up(lg) {
+          margin-bottom: rem-calc(34px);
+        }
+      }
+
+      .cb-availability__button--hide {
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+          display: block;
+        }
+      }
+
+      .c-button--type-primary {
+        width: rem-calc(210px);
+        display: block;
+
+        @include media-breakpoint-up(lg) {
+          margin: 60px auto;
+        }
+      }
+    }
+  }
+
+  &--type-two {
+    #{$cb}__container {
+      display: inline-block;
+      width: 100%;
+      padding: 0 rem-calc(23px);
+    }
+
+    .cb-availability__block {
+      .cb-availability__search {
+        margin: 0 auto;
+        padding: rem-calc(25px) 0 rem-calc(40px) 0;
+        max-width: 350px;
+
+        @include media-breakpoint-up(lg) {
+          display: block;
+          max-width: rem-calc(410px);
+        }
+
+        select::-ms-expand {
+          border-style: none;
+          background: $color-grey-100;
+        }
+
+        label {
+          display: block;
+          color: $color-grey-300;
+          text-align: center;
+          font-size: rem-calc(24px);
+          margin-bottom: rem-calc(22px);
+        }
+
+        .cb-availability--dropdown {
+          font-family: $font-ws-reg;
+          font-size: rem-calc(14px);
+          color: $color-grey-200;
+          letter-spacing: rem-calc(1.4px);
+          text-align: center;
+          line-height: rem-calc(16px);
+          border: 1px solid $color-green-200;
+          background-color: transparent;
+          height: rem-calc(50px);
+          text-transform: uppercase;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-image: url("data:image/svg+xml,%0A%3Csvg width='13px' height='6px' viewBox='0 0 13 6' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Availability_Type-02_Desktop' transform='translate(-660.000000, -102.000000)' stroke='%23626865'%3E%3Cg id='Availability_Type2'%3E%3Cg id='Month' transform='translate(536.000000, 32.000000)'%3E%3Cg id='Party-size' transform='translate(0.000000, 48.000000)'%3E%3Cpolyline id='Rectangle' transform='translate(130.656854, 22.000000) rotate(-315.000000) translate(-130.656854, -22.000000) ' points='134.656854 18 134.656854 26 126.656854 26'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          background-repeat: no-repeat, repeat;
+          background-position: right rem-calc(20px) top 50%, 0 0;
+          text-indent: rem-calc(20px);
+          padding-right: rem-calc(10px);
+          border-radius: 0;
+          width: rem-calc(150px);
+
+          @include media-breakpoint-up(lg) {
+            width: rem-calc(170px);
+            text-indent: rem-calc(35px);
+          }
+
+          // Fixes for dropdowns in FireFox
+          @-moz-document url-prefix("") {
+            text-indent: 0;
+          }
+
+          // Fixes for dropdowns in Safari
+          @media not all and (min-resolution: 0.001dpcm) {
+            text-align-last: center;
+          }
+
+          // Fixes for dropdowns in IE11
+          @media (-ms-high-contrast: none),
+            (-ms-high-contrast: active) {
+            padding-left: rem-calc(30px);
+          }
+        }
+
+        .cb-availability--datepicker {
+          font-family: $font-ws-reg;
+          font-size: rem-calc(14px);
+          color: $color-grey-200;
+          letter-spacing: rem-calc(1.4px);
+          text-align: center;
+          line-height: rem-calc(16px);
+          border: 1px solid $color-green-200;
+          background-color: transparent;
+          width: rem-calc(155px);
+          height: rem-calc(50px);
+          text-transform: uppercase;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='16px' height='16px' viewBox='0 0 16 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Enoun_Calendar_496566%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Availability_Type-02_Desktop' transform='translate(-870.000000, -96.000000)' fill='%23D3D9D3' fill-rule='nonzero'%3E%3Cg id='Availability_Type2'%3E%3Cg id='Month-Copy' transform='translate(736.000000, 32.000000)'%3E%3Cg id='Party-size' transform='translate(0.000000, 48.000000)'%3E%3Cg id='noun_Calendar_496566' transform='translate(134.000000, 16.000000)'%3E%3Cpath d='M15.3846154,1.23076923 L12.9230769,1.23076923 L12.9230769,0.615384615 C12.9230769,0.275692308 12.6473846,0 12.3076923,0 C11.968,0 11.6923077,0.275692308 11.6923077,0.615384615 L11.6923077,1.23076923 L4.30769231,1.23076923 L4.30769231,0.615384615 C4.30769231,0.275692308 4.032,0 3.69230769,0 C3.35261538,0 3.07692308,0.275692308 3.07692308,0.615384615 L3.07692308,1.23076923 L0.615384615,1.23076923 C0.275692308,1.23076923 0,1.50646154 0,1.84615385 L0,15.3846154 C0,15.7243077 0.275692308,16 0.615384615,16 L15.3846154,16 C15.7243077,16 16,15.7243077 16,15.3846154 L16,1.84615385 C16,1.50646154 15.7243077,1.23076923 15.3846154,1.23076923 Z M3.07692308,2.46153846 L3.07692308,3.07692308 C3.07692308,3.41661538 3.35261538,3.69230769 3.69230769,3.69230769 C4.032,3.69230769 4.30769231,3.41661538 4.30769231,3.07692308 L4.30769231,2.46153846 L11.6923077,2.46153846 L11.6923077,3.07692308 C11.6923077,3.41661538 11.968,3.69230769 12.3076923,3.69230769 C12.6473846,3.69230769 12.9230769,3.41661538 12.9230769,3.07692308 L12.9230769,2.46153846 L14.7692308,2.46153846 L14.7692308,4.92307692 L1.23076923,4.92307692 L1.23076923,2.46153846 L3.07692308,2.46153846 Z M6.15384615,9.84615385 L6.15384615,6.15384615 L9.84615385,6.15384615 L9.84615385,9.84615385 L6.15384615,9.84615385 Z M9.84615385,11.0769231 L9.84615385,14.7692308 L6.15384615,14.7692308 L6.15384615,11.0769231 L9.84615385,11.0769231 Z M4.92307692,9.84615385 L1.23076923,9.84615385 L1.23076923,6.15384615 L4.92307692,6.15384615 L4.92307692,9.84615385 Z M11.0769231,6.15384615 L14.7692308,6.15384615 L14.7692308,9.84615385 L11.0769231,9.84615385 L11.0769231,6.15384615 Z M1.23076923,11.0769231 L4.92307692,11.0769231 L4.92307692,14.7692308 L1.23076923,14.7692308 L1.23076923,11.0769231 Z M11.0769231,14.7692308 L11.0769231,11.0769231 L14.7692308,11.0769231 L14.7692308,14.7692308 L11.0769231,14.7692308 Z' id='Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          background-repeat: no-repeat, repeat;
+          background-position: right rem-calc(13px) top 50%, 0 0;
+          text-indent: rem-calc(16px);
+          padding-right: rem-calc(10px);
+          border-radius: 0;
+
+          select.cb-availability--datepicker:disabled {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+          }
+
+          select:disabled.cb-availability--datepicker::-ms-expand {
+            display: none;
+          }
+
+          @-moz-document url-prefix("") {
+            text-indent: 0;
+          }
+
+          @media not all and (min-resolution: 0.001dpcm) {
+            text-align-last: center;
+          }
+
+          // Fixes for dropdowns in IE11
+          @media (-ms-high-contrast: none),
+            (-ms-high-contrast: active) {
+            padding-left: rem-calc(30px);
+          }
+        }
+
+        .cb-availability__label--show {
+          display: none;
+
+          @include media-breakpoint-up(lg) {
+            display: block;
+          }
+        }
+
+        .cb-availability__label--hide {
+          display: block;
+
+          @include media-breakpoint-up(lg) {
+            display: none;
+          }
+        }
+
+        .cb-availability__month,
+        .cb-availability__length {
+          display: inline-block;
+          margin: 0 rem-calc(6px);
+
+          @include media-breakpoint-up(lg) {
+            margin: 0 rem-calc(16px);
+          }
+
+          select::-ms-expand {
+            display: none;
+          }
+
+          select {
+            -webkit-appearance: none;
+            appearance: none;
+          }
+        }
+      }
+
+      .c-button {
+        display: block;
+        width: 220px;
+        padding: 1rem;
+
+        @include media-breakpoint-up(lg) {
+          margin-top: rem-calc(20px);
+        }
+      }
+
+      .c-button--type-primary {
+        width: rem-calc(210px);
+        padding: 7px 12px 6px;
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.cb-section-header {
+  $cb: &;
+
+  &--type-one {
+    #{$cb}__container {
+      display: inline-block;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      height: auto;
+      padding: 0 24px;
+      position: relative;
+
+      @include media-breakpoint-up(md) {
+        text-align: center;
+        padding: 0 48px;
+      }
+    }
+
+    #{$cb}__text-block {
+      width: 100%;
+      max-width: 920px;
+      text-align: left;
+      text-align: center;
+
+      @include media-breakpoint-up(md) {
+        text-align: center;
+      }
+
+      div:first-child,
+      a:first-child {
+        margin-top: 0 !important;
+
+        & > :first-child {
+          margin-top: 0 !important;
+        }
+      }
+    }
+
+    #{$cb}__pre-heading {
+      @include label-text;
+
+      @include media-breakpoint-up(md) {
+        font-size: rem-calc(14px);
+        line-height: rem-calc(16px);
+      }
+    }
+
+    #{$cb}__heading {
+      color: $color-green-500;
+    }
+
+    #{$cb}__text {
+      color: $color-green-500;
+
+      p {
+        max-width: rem-calc(440px);
+        margin-left: auto;
+        margin-right: auto;
+
+        @include media-breakpoint-up(md) {
+          max-width: rem-calc(540px);
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+
+    &#{$cb}--text-colour-one {
+      #{$cb}__pre-heading {
+        color: $color-grey-200 !important;
+      }
+
+      #{$cb}__heading {
+        color: $color-green-400 !important;
+      }
+
+      #{$cb}__text {
+        color: $color-grey-300 !important;
+      }
+    }
+
+    &#{$cb}--text-colour-two {
+      #{$cb}__pre-heading {
+        color: $color-grey-100 !important;
+      }
+
+      #{$cb}__heading {
+        color: $color-grey-100 !important;
+      }
+
+      #{$cb}__text {
+        color: $color-grey-100 !important;
+      }
+    }
+
+    &#{$cb}--text-colour-three {
+      #{$cb}__pre-heading {
+        color: $color-grey-300 !important;
+      }
+
+      #{$cb}__heading {
+        color: $color-grey-300 !important;
+      }
+
+      #{$cb}__text {
+        color: $color-grey-300 !important;
+      }
+    }
+  }
+}

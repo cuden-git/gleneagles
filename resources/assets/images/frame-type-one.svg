@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="322px" height="418px" viewBox="0 0 322 418" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
+    <title>frame-type-one</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="frame-type-one" transform="translate(1.000000, 1.000000)">
+            <polygon id="Stroke-1" stroke="#2D5436" points="15.0943396 400 303.899371 400 303.899371 16 15.0943396 16"></polygon>
+            <path d="M319.070362,32.2306411 C320.944345,32.2306411 286.482845,32.2306411 286.482845,0 L32.5837916,0 C32.5837916,0 32.5837916,32.2306411 0,32.2306411 L0,383.769359 C0,383.769359 32.5837916,383.769359 32.5837916,416 L286.482845,416 C286.482845,416 286.482845,383.769359 319.070362,383.769359 L319.070362,32.2306411 Z" id="Stroke-2" stroke="#164E4F" stroke-width="2"></path>
+        </g>
+    </g>
+</svg>

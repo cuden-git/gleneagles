@@ -1,0 +1,596 @@
+body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+}
+
+.header-mobile {
+  $header: &;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 64px;
+  z-index: 11;
+
+  #{$header}__container-top {
+    background: $color-green-100;
+    text-align: center;
+    height: 64px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    overflow: auto;
+    transition: 0.5s all ease-in-out;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    border-bottom: 1px solid $color-green-200;
+  }
+
+  #{$header}__link-account {
+    background-image: url(../images/icon-account-mobile-green-400.svg);
+    background-size: 18px 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 28px;
+    height: 22px;
+
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      text-indent: -99999px;
+    }
+  }
+
+  #{$header}__logo {
+    width: 153px;
+    height: 16px;
+    background-image: url("../images/gleneagles-logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      text-indent: -99999px;
+    }
+  }
+
+  #{$header}__cta-hamburger {
+    width: 28px;
+
+    &::after,
+    &::before,
+    div {
+      background-color: $color-green-400;
+      content: "";
+      display: block;
+      height: 1px;
+      width: 24px;
+      margin: 6px auto;
+      transition: all 0.25s ease-in-out;
+    }
+
+    &::after,
+    &::before {
+      margin: 6px auto;
+      width: 16px;
+    }
+
+    &#{$header}__cta-hamburger--crossed {
+      &::before {
+        transform: translateY(7px) rotate(135deg);
+        width: 20px;
+      }
+
+      &::after {
+        transform: translateY(-7px) rotate(-135deg);
+        width: 20px;
+      }
+
+      div {
+        transform: scale(0);
+      }
+    }
+  }
+
+  #{$header}__container-bottom {
+    height: calc(100% - 64px);
+    background: $color-green-100;
+    position: fixed;
+    z-index: 9999;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    transition: 0.25s all ease-in-out;
+    // transform: translateX(100%);
+    overflow: visible !important;
+    transform: translateX(100%);
+
+    &.show {
+      transform: translateX(0%);
+    }
+
+    #{$header}__page-navigation {
+      position: relative;
+      max-height: calc(100% - 160px);
+      height: 510px;
+      overflow: scroll;
+      overflow-x: hidden;
+
+      @include media-breakpoint-up(md) {
+        max-height: calc(100% - 80px);
+      }
+
+      &.show-sub-menu {
+        // overflow: hidden;
+
+        ul {
+          transform: translateX(-100%);
+          width: 99.9999% !important;
+        }
+      }
+
+      > ul {
+        list-style-type: none;
+        margin: 0;
+        width: 100%;
+        text-align: left;
+        padding: 16px 24px 0;
+        transition: 0.25s ease-out;
+        transform: translateX(0);
+        transition-delay: 0s;
+
+        > li {
+          width: 100%;
+          border-bottom: 1px solid $color-green-200;
+
+          &:last-child {
+            border-bottom: 0;
+          }
+
+          &:first-child {
+            a {
+              font-family: $font-pt-reg-i;
+              font-size: 20px;
+            }
+          }
+
+          > a {
+            text-decoration: none;
+            color: $color-green-400;
+            font-family: $font-ws-reg;
+            font-size: rem-calc(18px);
+            line-height: rem-calc(22px);
+            width: 100%;
+            padding: 16px 0;
+            display: block;
+            position: relative;
+
+            &::after {
+              content: "";
+              position: absolute;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              margin: auto;
+              display: inline-block;
+              width: 9px;
+              height: 15px;
+              background: url(../images/gleneagles-mobile_menu_arrow_green_100.svg);
+              background-position: center;
+              background-repeat: no-repeat;
+            }
+          }
+
+          > ul {
+            background: $color-green-100;
+            list-style-type: none;
+            margin: 0;
+            text-align: left;
+            padding: 16px 24px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+            transform: translateX(200%);
+            transition: 0s;
+            transition-delay: 0.25s;
+
+            &.active {
+              transform: translateX(100%);
+              transition: 0s;
+              transition-delay: 0s;
+            }
+
+            > li {
+              width: 100%;
+              border-bottom: 1px solid $color-green-200;
+
+              &:last-child {
+                border-bottom: 0;
+              }
+
+              &.return {
+                a {
+                  color: $color-green-400;
+                  font-size: rem-calc(18px);
+                  line-height: rem-calc(22px);
+
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    right: auto;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    display: inline-block;
+                    width: 9px;
+                    height: 15px;
+                    background: url(../images/gleneagles-mobile_menu_arrow_green_100.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    transform: rotate(180deg);
+                  }
+                }
+              }
+
+              > a {
+                text-decoration: none;
+                color: $color-grey-200;
+                font-family: $font-ws-reg;
+                font-size: rem-calc(16px);
+                line-height: rem-calc(22px);
+                width: 100%;
+                padding: 16px 0 16px 24px;
+                display: block;
+                position: relative;
+
+                &::after {
+                  content: "";
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                  bottom: 0;
+                  margin: auto;
+                  display: inline-block;
+                  width: 9px;
+                  height: 15px;
+                  background: url(../images/gleneagles-mobile_menu_arrow_green_100.svg);
+                  background-position: center;
+                  background-repeat: no-repeat;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #{$header}__utilities-navigation {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      height: 160px;
+      background: $color-green-100;
+      padding: 24px;
+      transition: all 0.25s ease-in-out;
+
+      @include media-breakpoint-up(md) {
+        height: 80px;
+      }
+
+      &#{$header}__utilities-navigation--active {
+        height: 290px;
+        transition-delay: 0.2s;
+
+        .mobile-site-search {
+          border-color: $color-green-400 !important;
+        }
+
+        .site-search__results {
+          opacity: 1 !important;
+          // pointer-events: all !important;
+        }
+      }
+
+      ul {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 330px;
+        width: 100%;
+        margin: auto;
+        height: 100%;
+        align-items: flex-end;
+
+        @include media-breakpoint-up(md) {
+          max-width: 360px;
+        }
+
+        li {
+          list-style: none;
+          width: 32px;
+          height: 32px;
+
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+
+          &.link-search-container {
+            width: 100%;
+            margin-bottom: 40px;
+            align-self: self-start;
+            display: block;
+
+            @include media-breakpoint-up(md) {
+              display: none;
+            }
+
+            .mobile-site-search {
+              border: 1px solid $color-green-200;
+              height: 54px;
+              position: relative;
+            }
+
+            .site-search__form {
+              position: relative;
+              width: 100%;
+              transform: translate(0);
+              height: 100%;
+              top: 0;
+              left: 0;
+            }
+
+            label {
+              position: relative;
+              float: left;
+              width: 100%;
+            }
+
+            input {
+              &[type=text] {
+                border: none;
+                font-family: $font-ws-reg;
+                font-size: 16px;
+                color: $color-grey-200;
+                padding: 16px 40px 17px 24px;
+                width: 100%;
+                background: transparent;
+              }
+
+              &[type=submit] {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 32px;
+                height: 32px;
+                right: 8px;
+                margin: auto;
+                border: none;
+                background-image: url("../images/icon-search-mobile-green-400.svg");
+                background-size: 19px 18px;
+                background-repeat: no-repeat;
+                background-position: center;
+                cursor: pointer;
+                float: left;
+                vertical-align: bottom;
+                background-color: transparent;
+              }
+
+              &:focus {
+                outline: none;
+              }
+            }
+
+            .site-search__results {
+              position: absolute;
+              font-family: $font-ws-reg;
+              top: 100%;
+              left: 0;
+              opacity: 0;
+              // pointer-events: none;
+              width: 100%;
+              padding: 16px 12px 12px 24px;
+
+              // &.active {
+              //   display: block;
+              // }
+
+              ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+              }
+
+              li {
+                text-align: left;
+                display: block;
+                width: 100%;
+                height: auto;
+
+                &:first-child {
+                  a {
+                    padding: 8px 40px 12px 0;
+                  }
+                }
+
+                &:last-child {
+                  display: none;
+                }
+
+                a {
+                  color: $color-grey-200;
+                  text-decoration: none;
+                  padding: 12px 40px 12px 0;
+                  display: block;
+                }
+              }
+            }
+
+            .site-search__view-all {
+              cursor: pointer;
+              font-weight: bold;
+            }
+          }
+
+          &.link-search {
+            background-image: url("../images/icon-search-mobile-green-400.svg");
+            background-size: 19px 18px;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 40px;
+            margin: 0 24px;
+            position: relative;
+            z-index: 1;
+            display: none;
+
+            @include media-breakpoint-up(md) {
+              display: block;
+            }
+          }
+
+          &.link-gift {
+            background-image: url("../images/icon-gift-mobile-green-400.svg");
+            background-size: 25px 24px;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 40px;
+            margin: 0 24px;
+            position: relative;
+            z-index: 1;
+          }
+
+          &.link-shop {
+            background-image: url("../images/icon-shop-mobile-green-400.svg");
+            background-size: 22px 24px;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 40px;
+            margin: 0 24px;
+            position: relative;
+            z-index: 1;
+          }
+
+          &.link-language {
+            position: relative;
+            z-index: 1;
+            width: 40px;
+            margin: 0 24px;
+            cursor: pointer;
+
+            .language-switcher {
+              display: block;
+              width: 40px;
+              height: 44px;
+              position: absolute;
+
+              li {
+                margin: 0;
+                font-family: $font-ws-reg;
+                color: $color-green-400;
+                text-transform: uppercase;
+                font-size: 16px;
+                display: block;
+                padding: 10px 7px;
+                width: 48px;
+
+                &.lang-item {
+                  padding: 0;
+                  width: 80px;
+                  margin-left: -16px;
+                  float: left;
+                  background: $color-green-100;
+                  display: none;
+                  position: absolute;
+
+                  &.current-lang {
+                    background: $color-green-200;
+                  }
+
+                  &:nth-child(2) {
+                    border-bottom: 1px solid $color-grey-400;
+                    border-left: 1px solid $color-grey-400;
+                    border-right: 1px solid $color-grey-400;
+                    top: -32px;
+                  }
+
+                  &:nth-child(3) {
+                    border-bottom: 1px solid $color-grey-400;
+                    border-left: 1px solid $color-grey-400;
+                    border-right: 1px solid $color-grey-400;
+                    top: -64px;
+                  }
+
+                  &:last-child {
+                    border-top: 1px solid $color-grey-400;
+                  }
+
+                  a {
+                    padding: 10px 16px;
+                    text-transform: capitalize;
+
+                    &:hover {
+                      background: $color-green-200;
+                    }
+                  }
+                }
+
+                a {
+                  text-decoration: none;
+                  font-family: $font-ws-reg;
+                  color: $color-green-400;
+                  text-transform: uppercase;
+                  font-size: 12px;
+                }
+
+                &.active-lang {
+                  display: block !important;
+                  position: relative;
+
+                  &::after {
+                    content: "";
+                    background-image: url("../images/icon-chevron-down-green-400.svg");
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    overflow: hidden;
+                    width: 8px;
+                    height: 4px;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 2px;
+                    margin: auto;
+                    transform: rotate(180deg);
+                  }
+                }
+              }
+
+              &:hover {
+                .lang-item {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    display: none;
+  }
+}

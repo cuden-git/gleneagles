@@ -1,0 +1,196 @@
+.cb-filter {
+  $cb: &;
+
+  &--type-one {
+    overflow: visible;
+    position: relative;
+
+    #{$cb}__underlay {
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      position: absolute;
+      top: 100%;
+    }
+
+    #{$cb}__container {
+      width: 100%;
+      padding-left: rem-calc(24px);
+      padding-right: rem-calc(24px);
+
+      @include media-breakpoint-up(md) {
+        padding-left: rem-calc(48px);
+        padding-right: rem-calc(48px);
+      }
+
+      #{$cb}__text-block {
+        text-align: center;
+        width: 100%;
+
+        #{$cb}__heading {
+          text-align: center;
+          color: $color-grey-300;
+        }
+
+        .c-flourish {
+          margin-top: rem-calc(28px);
+          margin-bottom: rem-calc(8px);
+
+          @include media-breakpoint-up(md) {
+            margin-top: rem-calc(16px);
+            margin-bottom: rem-calc(24px);
+          }
+        }
+
+        ul {
+          list-style-type: none;
+          margin-block-start: 0;
+          margin-block-end: 0;
+          margin: 0 auto;
+          padding: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          max-width: 28rem;
+
+          li {
+            @include h4;
+
+            position: relative;
+            width: 100%;
+            padding: 0 rem-calc(12px) rem-calc(16px);
+            margin-bottom: rem-calc(20px) !important;
+            min-width: rem-calc(125px);
+            cursor: pointer;
+            opacity: 0.3;
+            white-space: nowrap;
+            // margin-left: 12px !important;
+            // margin-right: 12px !important;
+
+            @include media-breakpoint-up(md) {
+              @include h5;
+            }
+
+            span {
+              @include label-text;
+
+              color: $color-grey-200;
+            }
+
+            div {
+              color: $color-grey-300;
+            }
+
+            &:nth-child(2) {
+              &::after {
+                right: -9px;
+                left: auto;
+              }
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+              background-color: $color-green-400;
+              left: 0;
+            }
+
+            &::after {
+              content: url("../images/nav-icon-green-400.svg");
+              position: absolute;
+              bottom: 11px;
+              width: 18px;
+              height: 8px;
+              left: -9px;
+              right: auto;
+              margin: auto;
+              font-size: rem-calc(26px);
+              line-height: rem-calc(32px);
+              display: none;
+            }
+
+            &:hover,
+            &.is-active {
+              opacity: 1;
+
+              &::after {
+                display: block;
+              }
+            }
+
+            @include media-breakpoint-up(md) {
+              &:nth-child(2) {
+                &::after {
+                  left: 0;
+                  right: 0;
+                  margin: auto;
+                }
+              }
+
+              &::before {
+                display: none;
+              }
+
+              &::after {
+                left: 0;
+                right: 0;
+                margin: auto;
+              }
+            }
+          }
+        }
+
+        #{$cb}__text {
+          max-width: rem-calc(320px);
+          margin: 0 auto;
+          color: $color-grey-300;
+
+          @include media-breakpoint-up(md) {
+            &::after {
+              left: 0;
+              right: 0;
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
+
+    &#{$cb}--text-colour-two {
+      #{$cb}__container {
+        #{$cb}__text-block {
+          #{$cb}__heading {
+            color: $color-grey-100;
+          }
+
+          ul {
+            li {
+              &::before {
+                background-color: $color-green-100;
+              }
+
+              div {
+                color: $color-grey-100;
+              }
+
+              span {
+                color: $color-green-200;
+              }
+
+              &::after {
+                content: url("../images/nav-icon-grey-100.svg");
+              }
+            }
+          }
+
+          #{$cb}__text {
+            color: $color-grey-100;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.c-video-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.3;
+  }
+
+  .video-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 79px;
+    height: 79px;
+    z-index: 100;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &::before {
+      content: "Play";
+      font-size: 22px;
+      line-height: 28px;
+      font-family: $font-pt-reg;
+      color: $color-green-100;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 79px;
+      height: 28px;
+      z-index: 2;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 79px;
+      height: 79px;
+      background-image: url("../images/button-play-outline.svg");
+      background-size: contain;
+    }
+
+    &:hover {
+      &::after {
+        background-image: url("../images/button-video-play-hover.svg");
+        background-size: contain;
+      }
+
+      &::before {
+        color: $color-green-100;
+      }
+    }
+  }
+
+  &.playing {
+    &::after {
+      display: none;
+    }
+
+    .video-button {
+      opacity: 0;
+    }
+  }
+}
